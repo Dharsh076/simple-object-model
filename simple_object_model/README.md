@@ -1,33 +1,31 @@
+# 🧠 Simple Object Model in Python
 
-# Simple Object Model in Python
+This project reimplements a **minimal Python-like object system** from scratch, inspired by Carl Friedrich Bolz’s “A Simple Object Model” (from the book *500 Lines or Less*). It models how classes, instances, methods, attributes, and metaclasses work under the hood.
 
-This project implements a **minimal object model** inspired by Carl Friedrich Bolz’s *A Simple Object Model* (from the book *500 Lines or Less*). The goal is to **reconstruct core principles of object-oriented programming**—like classes, inheritance, bound methods, descriptors, and metaclasses—entirely from scratch using Python.
-
-The implementation is **modular, testable, and enhanced** to be recruiter-friendly and educational.
+The goal: to **understand the internals** of object-oriented programming and demonstrate deep reasoning about Python’s runtime behavior.
 
 ---
 
 ## 🚀 Features
 
-✅ Class and instance system  
-✅ Attribute reading and writing  
-✅ Method resolution order (MRO)  
-✅ Support for `isinstance()` and `issubclass()`  
-✅ Bound method handling (attribute-based model)  
-✅ Meta-object protocol (`__getattr__`, `__setattr__`)  
-✅ Descriptors (`__get__`)  
-✅ Map-based optimization for efficient instance layout (like hidden classes in JS VMs)
+- ✅ Class and Instance system
+- ✅ Attribute reading and writing
+- ✅ Method resolution order (MRO)
+- ✅ Support for `isinstance()` and `issubclass()`
+- ✅ Bound method handling (`f(obj)` binds `obj.f`)
+- ✅ Meta-object protocol: `__getattr__`, `__setattr__`
+- ✅ Unit tests using `pytest`
 
 ---
 
-## 🧠 Project Motivation
+## 🧠 Why This Matters
 
-Object models form the backbone of dynamic programming languages like Python, Ruby, and JavaScript. By re-implementing a Python-inspired object model from scratch, this project demonstrates:
+Object models form the foundation of dynamic languages like Python, Ruby, and JavaScript. By building one manually, this project shows:
 
-- Deep understanding of language internals
-- System design and abstraction skills
-- Custom metaprogramming
-- Pythonic architecture and testing best practices
+- Understanding of class-instance relationships
+- Design of attribute dispatch and method binding
+- MRO and inheritance resolution
+- Custom metaprogramming logic
 
 ---
 
@@ -36,17 +34,14 @@ Object models form the backbone of dynamic programming languages like Python, Ru
 ```
 simple_object_model/
 ├── src/
-│   ├── base.py          # Core logic: attr lookup, callmethod, MRO
-│   ├── class_model.py   # Class definition and inheritance logic
-│   ├── instance.py      # Object layout and hidden class optimization
-│   ├── maps.py          # Hidden class system (map-based layout)
-├── tests/
-│   └── test_object_model.py  # Pytest-compatible tests
+│   ├── base.py              # Core object logic (Base class, attribute handling)
+│   ├── class_.py            # Class definition and method resolution
+│   └── test_object_model.py # Pytest test cases covering core behavior
 ```
 
 ---
 
-## 🧪 Run the Tests
+## 🧪 Running the Tests
 
 Make sure `pytest` is installed:
 
@@ -57,34 +52,23 @@ pip install pytest
 Run the test suite:
 
 ```bash
-pytest tests/
+cd src/
+python -m pytest test_object_model.py
 ```
 
 ---
 
 ## 📘 Attribution
 
-This project is **inspired by** Carl Friedrich Bolz’s *A Simple Object Model*, but the code is **entirely original**, refactored, modularized, and documented by me to reflect **best practices** and **educational clarity**.  
-It serves as a foundation for exploring dynamic language behavior and object system design.
+Inspired by Carl Friedrich Bolz’s object model reimplementation, but all code is **fully original**, modularized, and written for clarity and extensibility.
 
 ---
 
-## 💼 Ideal For
-
-- Technical interview prep
-- Showcasing language internals understanding
-- Building credibility for roles in:
-  - Language tooling
-  - Virtual machines (VMs)
-  - Python internals
-  - Systems programming
-  - Compiler/interpreter development
-
----
-
-## 🧑‍💻 Author
+## 💼 Author
 
 **Dharshini Vasudevan**  
 M.Eng in Electrical and Computer Engineering  
-Actively seeking roles in embedded systems, software development, and language tooling  
-🔗 [LinkedIn](#) | 📫 [Email](#)
+Actively seeking roles in embedded systems, software development, and language tooling.
+
+📫 [LinkedIn](https://www.linkedin.com/in/dharshini-vasudevan/)  
+🔗 GitHub: [Dharsh076](https://github.com/Dharsh076)
