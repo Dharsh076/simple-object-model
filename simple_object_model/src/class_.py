@@ -1,5 +1,4 @@
-
-from .base import Base, MISSING
+from base import Base, MISSING
 
 class Class(Base):
     def __init__(self, name, base_class, fields, metaclass):
